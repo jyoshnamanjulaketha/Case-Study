@@ -1,0 +1,58 @@
+setwd("C:/Users/manju/OneDrive/Pictures")
+df <- read.csv("DataSet.csv")
+df
+summary(df)
+length(df)
+#maximum value
+max(df$Height.Inches.)
+max(df$Weight.Pounds.)
+#minimum value
+min(df$Height.Inches.)
+min(df$Weight.Pounds.)
+#range
+range(df$Height.Inches.)
+range(df$Weight.Pounds.)
+#mean for weight and Height
+mean(df$Height.Inches)
+mean(df$Weight.Pounds)
+#median
+median(df$Height.Inches)
+median(df$Weight.Pounds)
+#standard deviation
+sd(df$Height.Inches)
+sd(df$Weight.Pounds)
+#variance
+var(df$Height.Inches.)
+var(df$Weight.Pounds.)
+#quartiles
+quantile(df$Height.Inches.)
+quantile(df$Weight.Pounds.)
+#bar chat
+barplot(table(df$Height.Inches.))
+barplot(table(df$Weight.Pounds.))
+#histogram
+hist(df$Height.Inches.,main="Heights of persons",col = c("pink","yellow","blue"),xlab= "Heights",ylab = "No.of persons")
+hist(df$Weight.Pounds.,main="Weights of persons",col = c("pink","yellow","blue"),xlab= "Heights",ylab = "No.of persons")
+#scatter plot
+plot(df$Height.Inches.)
+plot(df$Weight.Pounds.)
+#plot with type
+plot(df$Height.Inches.,df$Weight.Pounds.,'b')
+#scatter plot with smooth curve
+scatter.smooth(df$Height.Inches.,df$Weight.Pounds.)
+library(scatterplot3d)
+scatterplot3d(df$Height.Inches.,df$Weight.Pounds.,angle=120,color="pink")
+#box plot
+boxplot(df$Height.Inches.,df$Weight.Pounds.)
+
+#correlation
+corr <- cor(df$Height.Inches,df$Weight.Pounds)
+corr
+plot(df$Height.Inches,df$Weight.Pounds,main = "Weight vs Height",xlab = "Weight",ylab = "Height")
+#regression
+r=lm(df$Height.Inches~df$Weight.Pounds)
+r
+summary(r)
+confint(r)
+d = data.frame(v = c(112,171))
+predict(r,newdata=d)
